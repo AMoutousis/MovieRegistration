@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Movie Entry";
+}
+
+@model Movie
+
+<form action="../Movie/Movie" method="post">
+    <input type="number" name="ID" value="@Model.ID" placeholder="ID"/> <br />
+    <input type="text" name="Title" value="@Model.Title" placeholder="Title"/><br />
+    <p>Genre: </p>@Html.DropDownListFor(m => m.Genre, new SelectList(Enum.GetValues(typeof(Genre))))<br />
+    <input type="date" name="Year" value="@Model.Year" /><br />
+    <input type="text" name="Actors" value="@Model.Actors" placeholder="Actors"/><br />
+    <input type="text" name="Directors" value="@Model.Directors" placeholder="Directors"/><br />
+
+    <input type="submit" value="Add new Movie!" />
+</form>
