@@ -13,6 +13,8 @@ namespace MovieRegistration.Models
         {
             movie = new Movie();
 
+
+
             if (Year > StartDate || Year < EndDate)
             {
                 return new ValidationResult("Please enter a date after 1880 or before 2020");
