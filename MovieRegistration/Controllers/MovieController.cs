@@ -9,14 +9,24 @@ namespace MovieRegistration.Controllers
 {
     public class MovieController : Controller
     {
-        public IActionResult Index(Movie movie)
+        public IActionResult Index()
         {
-            return View(movie);
+            return View(new Movie());
         }
 
         public IActionResult Movie(Movie movie)
         {
-            return View("../Movie/AddMovie", movie);
+            /*
+             * This if statement is required so the proper page can be loaded if the Model is incorrect
+             */
+            if (ModelState.IsValid)
+            {
+                return View("../Movie/AddMovie", movie);
+            }
+            else
+            { 
+                return View("../Movie/Index", movie);
+            }
         }
     }
 }

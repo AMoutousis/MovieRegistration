@@ -4,6 +4,8 @@
 
 @model Movie
 
+@Html.ValidationSummary()
+
 <form action="../Movie/Movie" method="post">
     <input type="number" name="ID" value="@Model.ID" placeholder="ID"/> <br />
     <input type="text" name="Title" value="@Model.Title" placeholder="Title"/><br />
