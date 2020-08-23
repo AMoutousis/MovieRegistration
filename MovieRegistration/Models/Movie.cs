@@ -28,10 +28,8 @@ namespace MovieRegistration.Models
         [Range(typeof(DateTime), "1/1/1880", "12/31/2020", ErrorMessage = "Date is out of Range")]
         public DateTime Year { get; set; }
         [Required(ErrorMessage = "Please Enter a valid Actor")]
-        //[RegularExpression("[a-zA-Z]", ErrorMessage = "Only letters, please!")]
         public string Actors { get; set; }
         [Required(ErrorMessage = "Please Enter a valid Director")]
-        //[RegularExpression("[a-zA-Z]", ErrorMessage = "Only letters, please!")]
         public string Directors { get; set; }
 
         public Movie()
