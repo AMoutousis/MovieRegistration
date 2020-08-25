@@ -36,6 +36,15 @@ namespace MovieRegistration.Models
         { 
         
         }
+        public Movie(int ID, string title, Genre genre, DateTime year, string actors, string directors)
+        {
+            this.ID = ID;
+            this.Title = title;
+            this.Genre = genre;
+            this.Year = year;
+            this.Actors = actors;
+            this.Directors = directors;
+        }
     }
 
 }

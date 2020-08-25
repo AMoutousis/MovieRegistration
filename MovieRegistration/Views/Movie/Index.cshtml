@@ -3,10 +3,10 @@
 }
 
 @model Movie
-
+@using MovieRegistration.Controllers
 @Html.ValidationSummary()
 
-<form action="../Movie/Movie" method="post">
+<form action="../Movie/FullMovieForm" method="post">
     <input type="number" name="ID" value="@Model.ID" placeholder="ID"/> <br />
     <input type="text" name="Title" value="@Model.Title" placeholder="Title"/><br />
     <p>Genre: </p>@Html.DropDownListFor(m => m.Genre, new SelectList(Enum.GetValues(typeof(Genre))))<br />

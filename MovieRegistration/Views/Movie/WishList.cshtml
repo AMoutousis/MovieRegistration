@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "WishList";
+}
+
+
+
+<h1>WishList</h1>
+<p>We don't have the movie you're looking for.. but if you wish upon a star...</p>
+
+
+
+@{
+
+    foreach (var item in ViewBag.wish)
+    {
+    <ul>
+        <li>Title: @item.Title</li>
+        <li>Genre: @item.Genre</li>
+        <li>Date: @item.Year.ToShortDateString()</li>
+        <li>Actor: @item.Actors</li>
+        <li>Directors: @item.Directors</li>
+    </ul>
+
+    }
+
+    }

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "ShoppingCart";
+}
+
+<h1>ShoppingCart</h1>
+
+<p>Good news everyone! We have the movie you're looking for!</p>
+
+@{
+
+    foreach (var item in ViewBag.shopping)
+    {
+        <ul>
+            <li>Title: @item.Title</li>
+            <li>Genre: @item.Genre</li>
+            <li>Date: @item.Year.ToShortDateString()</li>
+            <li>Actor: @item.Actors</li>
+            <li>Directors: @item.Directors</li>
+        </ul>
+
+    }
+
+}

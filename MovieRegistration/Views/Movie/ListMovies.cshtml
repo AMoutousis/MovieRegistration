@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Title of the page";
+}
+
+<h1>ListMovies</h1>
+
+<p>We heard these are your favorite movies.</p>
+
+@using System;
+@using System.Collections.Generic;
+@using System.Text.Json;
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@using MovieRegistration.Models;
+
+@{List<Movie> movieList = new List<Movie>();
+    var myList = Context.Session.GetString("MovieListSession") ?? "EmptySession";
+    if (myList != "EmptySession")
+    {
+        movieList = JsonSerializer.Deserialize<List<Movie>>(myList);
+    }
+    else
+    {
+        <p>There are no movies in your Favorites</p>
+    }
+}
+@*@{
+
+        foreach (var item in ViewBag.list)
+        {
+            <ul>
+                <li>Title: @item.Title</li>
+                <li>Genre: @item.Genre</li>
+                <li>Date: @item.Year.ToShortDateString()</li>
+                <li>Actor: @item.Actors</li>
+                <li>Directors: @item.Directors</li>
+            </ul>
+
+        }
+
+    }*@
